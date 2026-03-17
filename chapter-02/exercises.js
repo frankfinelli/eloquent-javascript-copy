@@ -26,11 +26,15 @@ LOGS =>
 
 */
 
-function triangles() {
-  
+function triangles(x) {
+  let pound = ''
+  for (let y = 0; y < x; y++) {
+    pound += '#'
+    console.log(pound)
+  }  
 }
 
-
+triangles(3)
 ////////////////////////////////////////////////////////////////////////////////
 // fizzBuzz ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,8 +52,21 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
-}
+  for (let x = start; x <= end; x++) {
+    if (x % 15 === 0) {
+      console.log('fizzbuzz');
+    } else if (x % 5 === 0) {
+      console.log('buzz');
+    } else if (x % 3 === 0) {
+      console.log('fizz');
+    } else {
+      console.log(x); 
+    }
+  }
+};
+
+fizzBuzz(1, 10); 
+fizzBuzz(3, 20);
 
 ////////////////////////////////////////////////////////////////////////////////
 // drawChessboard //////////////////////////////////////////////////////////////
@@ -81,11 +98,23 @@ LOGS =>
 
 */
 
-function drawChessboard(x) {
+drawChessboard = (x) => {
+  
 
-
+  for (let z = 0; z < x; z++) {
+    let rook = ''
+    for (let w = 0; w < x; w++) {
+      if ((w + z) % 2 === 0) {
+        rook += ' '
+      } else {
+        rook += '#'
+      }
+    }
+    console.log(rook)
+  }
 }
 
+drawChessboard(16)
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
