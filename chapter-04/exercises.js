@@ -124,7 +124,6 @@ function deepEqual(x, y) {
   if (x == null || y == null || typeof x !== "object" || typeof y !== "object") return false
 
   //they're objects? great; are they long enough?
-
   let admKeys = Object.keys(x)
   let cptKeys = Object.keys(y)
   if (admKeys.length !== cptKeys.length) return false 
