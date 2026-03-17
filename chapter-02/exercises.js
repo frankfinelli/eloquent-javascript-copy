@@ -99,7 +99,7 @@ LOGS =>
 */
 
 drawChessboard = (x) => {
-  let board = ''
+  let bored = ''
 // and then add line break somewhere
   for (let z = 0; z < x; z++) {
     let rook = ''
@@ -110,8 +110,9 @@ drawChessboard = (x) => {
         rook += '#'
       }
     }
+    bored += (rook += '\n')
   }
-  console.log(rook)
+  console.log(bored)
 }
 
 console.log(drawChessboard(16))
