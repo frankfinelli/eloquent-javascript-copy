@@ -7,8 +7,8 @@ function range(x, y, z, arr = []) {
     if (x <= y) z = 1
     else z = -1
   }
-
-  if (z === 0) return arr
+  
+  if (x === y || z === 0) return arr
 
   if (z > 0) {
     for (x; x <= y; x += z) arr.push(x)
@@ -75,8 +75,8 @@ function reverseArrayInPlace(arr) {
 
 function arrayToList(arr) {
   let o = null
-
-  for (let x = arr.length - 1; x >= 0; x--) o = {key1: arr[x], key2: o}
+  //value = key1, rest = key2
+  for (let x = arr.length - 1; x >= 0; x--) o = {value: arr[x], rest: o}
 
   return o
 }
@@ -87,7 +87,8 @@ function arrayToList(arr) {
 
 function listToArray(o, arr = []) {
 
-for (o; o; o = o.key2) arr.push(o.key1)
+//value = key1, rest = key2  
+for (o; o; o = o.rest) arr.push(o.value)
 
 return arr
 }
@@ -96,8 +97,9 @@ return arr
 // prepend /////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
-function prepend(key1, o) {
-  return {key1, key2: o}
+function prepend(value, o) {
+  //value = key1, rest = key2
+  return {value, rest: o}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -106,10 +108,11 @@ function prepend(key1, o) {
 
 function nth(o, n) {
 
+  //value = key1, rest = key2
   if (!o) return undefined
-  if (n === 0) return o.key1
+  if (n === 0) return o.value
   
-  return nth(o.key2, n - 1)
+  return nth(o.rest, n - 1)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
