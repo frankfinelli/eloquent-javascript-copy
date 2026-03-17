@@ -26,7 +26,7 @@ console.log(range(1, 10, 2), range(50, 2, -3))
 ////////////////////////////////////////////////////////////////////////////////
 
 function sum(x, z = 0) {
-  //this one is so odd
+  //this one is so odd: values or range ends in an array?
   for (let y = 0; y < x.length; y++) z += x[y]
   
   return z
