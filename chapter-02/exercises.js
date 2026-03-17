@@ -110,7 +110,7 @@ drawChessboard = (x) => {
         rook += '#'
       }
     }
-    bored += (rook += '\n')
+    bored += (rook + '\n') //accidentally wrote rook += '\n' instead of just +...and both work
   }
   console.log(bored)
 }
